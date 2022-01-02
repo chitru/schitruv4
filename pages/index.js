@@ -65,7 +65,7 @@ export default function Home() {
                     <Skill skillTitle="Wireframing" skillDetails="Figma, Adobe XD, Sketch"/>
                     <Skill skillTitle="Image, Vector, Video" skillDetails="Adobe Photoshop, Adobe Illustrator, Adobe Premier Pro"/>
                     <Skill skillTitle="Front End, Landing Page, Newsletter, Forms" skillDetails="HTML, CSS, JavaScript, AJAX"/>
-                    <Skill skillTitle="Libraries, Frameworks &amp; APIs" skillDetails="Nodejs, GraphQL, REST API"/>
+                    <Skill skillTitle="Libraries, Frameworks & APIs" skillDetails="Nodejs, GraphQL, REST API"/>
                   </div>
                   <div>
                     <Skill skillTitle="Backend" skillDetails="Wordpress with WooCommerce, Django"/>
