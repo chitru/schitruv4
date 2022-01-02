@@ -10,12 +10,7 @@ const NavItems = [
     },
     {
       title: "blog",
-      url: "#",
-      cName: "nav-item"
-    },
-    {
-      title: "shop",
-      url: "#",
+      url: "https://medium.com/@chitru-shrestha",
       cName: "nav-item"
     }
   ]

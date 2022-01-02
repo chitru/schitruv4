@@ -10,7 +10,7 @@ export default function Home() {
       <Head>
         <title>Chitru Shrestha</title>
         <meta name="description" content="Chitru Shrestha" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Header/>
 
@@ -43,12 +43,12 @@ export default function Home() {
                 <h2 className="headings">Latest Works</h2>
                 <div className="latest-work__images">
                   <div className="image-container">
-                    <Image src="/work1.png"  layout="responsive" width="275" height="352" />
-                    {/* <img src="/work1.png"/> */}
+                    {/* <Image src="/work1.png"  layout="responsive" width="275" height="352" /> */}
+                    <img src="/work1.png" alt="picture.tools"/>
                   </div>
                   <div>
-                    <Image src="/work2.png" layout="responsive" width="1250" height="800"/>
-                    {/* <img src="/work2.png"/> */}
+                    {/* <Image src="/work2.png" layout="responsive" width="1250" height="800"/> */}
+                    <img src="/work2.png" alt="Aporia - Helping Creator Economy"/>
                   </div>
                 </div>
         </main>
@@ -60,14 +60,13 @@ export default function Home() {
                 <div className="about__col">
                   <div>
                     <Skill skillTitle="Wireframing" skillDetails="Figma, Adobe XD, Sketch"/>
-                    <Skill skillTitle="Image, Vector, Video" skillDetails="Adobe Photoshop, Adobe Illustrator, Adobe Premier Pro"/>
+                    <Skill skillTitle="Image, Vector, Video" skillDetails="Adobe Photoshop, Illustrator, Premier Pro"/>
                     <Skill skillTitle="Front End, Landing Page, Newsletter, Forms" skillDetails="HTML, CSS, JavaScript, AJAX"/>
-                    <Skill skillTitle="Libraries, Frameworks & APIs" skillDetails="Nodejs, GraphQL, REST API"/>
+                    <Skill skillTitle="Libraries, Frameworks & APIs" skillDetails="ReactJS, NodeJS, GraphQL, REST API"/>
                   </div>
                   <div>
-                    <Skill skillTitle="Backend" skillDetails="Wordpress with WooCommerce, Django"/>
-                    <Skill skillTitle="SSG’s and others" skillDetails="Gatsby, Shopify, Squarespace,  SCSS, LESS, 
-  GIT, Heroku, cPanel "/>
+                    <Skill skillTitle="Backend" skillDetails="Wordpress with WooCommerce"/>
+                    <Skill skillTitle="SSG’s and others" skillDetails="Gatsby, SCSS, LESS, GIT, Heroku, cPanel "/>
                   </div>
                 </div>
         </main>
