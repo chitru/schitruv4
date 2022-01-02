@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import Skill from './components/skill'
-import Footer from './components/footer'
-import Header from './components/header'
-import { MISC } from './components/misc'
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
+import Skill from "./components/skill"
+import Footer from "./components/footer"
+import Header from "./components/header"
+import { MISC } from "./components/misc"
 
 
 export default function Home() {
@@ -31,9 +31,9 @@ export default function Home() {
         </main>
       </section>
 
-      <section className='quote'>
+      <section className="quote">
         <main className="main">
-                <div className='mark'><Image src="/quo.png" width="32" height="32"/></div>
+                <div className="mark"><Image src="/quo.png" width="32" height="32"/></div>
                 <p>I create designs that will enchant your eyes,<br/>
                   enhance your business with less effort possible. <br/><br/>
                   I believe beauty is in simplicity.
@@ -44,8 +44,8 @@ export default function Home() {
       <section className="latest-work">
         <main className="main">
                 <h2 className="headings">Latest Works</h2>
-                <div className='latest-work__images'>
-                  <div className='image-container'>
+                <div className="latest-work__images">
+                  <div className="image-container">
                     <Image src="/work1.png"  layout="responsive" width="275" height="352" />
                     {/* <img src="/work1.png"/> */}
                   </div>
@@ -59,7 +59,7 @@ export default function Home() {
 
       <section className="about">
         <main className="main">
-                <h2 className="headings">I'm Full Stack Web Developer specialised in: </h2>
+                <h2 className="headings">I"m Full Stack Web Developer specialised in: </h2>
                 <div className="about__col">
                   <div>
                     <Skill skillTitle="Wireframing" skillDetails="Figma, Adobe XD, Sketch"/>

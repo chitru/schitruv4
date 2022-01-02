@@ -1,22 +1,22 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from "react"
+import Image from "next/image"
+import Link from "next/link"
 
 const NavItems = [
     {
-      title: 'work',
-      url: '/work',
-      cName: 'nav-item' 
+      title: "work",
+      url: "/work",
+      cName: "nav-item" 
     },
     {
-      title: 'blog',
-      url: '#',
-      cName: 'nav-item'
+      title: "blog",
+      url: "#",
+      cName: "nav-item"
     },
     {
-      title: 'shop',
-      url: '#',
-      cName: 'nav-item'
+      title: "shop",
+      url: "#",
+      cName: "nav-item"
     }
   ]
 

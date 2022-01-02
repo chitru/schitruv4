@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
-import Social from './social'
-import { MISC } from './misc'
+import React from "react"
+import Link from "next/link"
+import Social from "./social"
+import { MISC } from "./misc"
 
 function Footer() {
     return(
