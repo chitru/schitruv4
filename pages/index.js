@@ -1,11 +1,8 @@
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/link"
 import Skill from "./components/skill"
 import Footer from "./components/footer"
 import Header from "./components/header"
-import { MISC } from "./components/misc"
-
 
 export default function Home() {
   return (
