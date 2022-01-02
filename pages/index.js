@@ -2,24 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import Skill from './components/skill'
+import Footer from './components/footer'
+import Header from './components/header'
+import { MISC } from './components/misc'
 
-const NavItems = [
-  {
-    title: 'work',
-    url: '/work',
-    cName: 'nav-item' 
-  },
-  {
-    title: 'blog',
-    url: '#',
-    cName: 'nav-item'
-  },
-  {
-    title: 'shop',
-    url: '#',
-    cName: 'nav-item'
-  }
-]
 
 export default function Home() {
   return (
@@ -29,26 +15,7 @@ export default function Home() {
         <meta name="description" content="Chitru Shrestha" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header>
-      <main className="main">
-          <div className="header">
-            <div className="header__logo">
-              <Image src="/logo.png" width={120} height={70} alt="logo"/>
-            </div>
-            <div>
-              <ul className="header__menu" >
-                {
-                  NavItems.map((item, index) => {
-                    return (
-                      <li key={index} className={item.cName}><Link href={item.url}>{item.title}</Link></li>
-                    )
-                  })
-                }
-              </ul>
-            </div>
-          </div>
-      </main>
-      </header>
+      <Header/>
 
       <section>
         <main className="main">
@@ -108,16 +75,7 @@ export default function Home() {
                 </div>
         </main>
       </section>
-      <footer className="footer">
-        <main className="main">
-          <h3>The secret of getting ahead is <span>getting started</span></h3>
-          <p className="email-link">Hire me now: <Link href="mailto:schitru@gmail.com">schitru@gmail.com</Link></p>
-          <div className="footer__social">
-            <div><p>Always move forward.</p></div>
-            <div><Link target="_blank" href="https://github.com/chitru">Github</Link> | <Link target="_blank" href="https://twitter.com/xtru1990">Twitter</Link></div>    
-          </div>
-        </main>
-      </footer>
+    <Footer/>
     </div>
   )
 }

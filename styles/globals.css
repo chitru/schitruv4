@@ -43,7 +43,7 @@ header {
 .header__menu{
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   list-style: none;
   justify-content: end;
   padding: 1rem;
@@ -54,7 +54,6 @@ header {
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
   padding: 4.5rem 2rem;
   align-items: center;
   line-height: 3.7rem;
