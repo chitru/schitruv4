@@ -9,9 +9,7 @@ const MISC = {
 
 function Social(props) {
   return(
-      <div>
           <Link href={props.siteURL}>{props.site}</Link>
-      </div>
   )
 }
 
