@@ -1,8 +1,8 @@
 import Head from "next/head"
 import Image from "next/image"
-import Skill from "./components/skill"
 import Footer from "./components/footer"
 import Header from "./components/header"
+import Skill from "./components/skill"
 
 export default function Home() {
   return (
@@ -43,12 +43,12 @@ export default function Home() {
                 <h2 className="headings">Latest Works</h2>
                 <div className="latest-work__images">
                   <div className="image-container">
-                    {/* <Image src="/work1.png"  layout="responsive" width="275" height="352" /> */}
-                    <img src="/work1.png" alt="picture.tools"/>
+                    <Image src="/work1.png"  layout="responsive" width="275" height="352" />
+                    {/* <img src="/work1.png" alt="picture.tools"/> */}
                   </div>
                   <div>
-                    {/* <Image src="/work2.png" layout="responsive" width="1250" height="800"/> */}
-                    <img src="/work2.png" alt="Aporia - Helping Creator Economy"/>
+                    <Image src="/work2.png" layout="responsive" width="1250" height="800"/>
+                    {/* <img src="/work2.png" alt="Aporia - Helping Creator Economy"/> */}
                   </div>
                 </div>
         </main>
