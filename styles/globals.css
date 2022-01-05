@@ -38,6 +38,7 @@ header {
 
 .header__logo {
   display: flex;
+  cursor: pointer;
 }
 
 .header__menu{
@@ -172,6 +173,53 @@ header {
   justify-content: space-between;
   margin:0;
 }
+
+/* tabs */
+.work {
+  padding: 3rem;
+}
+
+.tab-title ul {
+  text-align: center;
+}
+
+.tab-title ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding:0.2rem 0.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.active-tab {
+  background-color: deeppink;
+  color: #fff;
+  border-radius: 0.8rem;
+}
+
+.tab-content {
+  background-color: #ccc;
+  padding:1rem;
+}
+
+.content {
+  display: none;
+}
+
+/* Slider */
+.slider-container {
+  text-align: center;
+}
+
+.slider-item img {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 70%;
+  max-height: auto;
+}
+
+
 
 a {
   text-decoration: none;

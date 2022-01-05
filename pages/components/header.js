@@ -22,7 +22,7 @@ function Header() {
         <main className="main">
             <div className="header">
               <div className="header__logo">
-                <Image src="/logo.png" width={120} height={70} alt="logo"/>
+                <Link href="../"><Image src="/logo.png" width={120} height={70} alt="logo"/></Link>
               </div>
               <div>
                 <ul className="header__menu" >
