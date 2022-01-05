@@ -30,7 +30,7 @@ function Work() {
                 handleClick(2);
               }}
             >
-              Graphics Design
+              Design
             </li>
             <li
                 className={toggleState === 3 ? "active-tab" : ""}
@@ -38,7 +38,7 @@ function Work() {
                 handleClick(3);
               }}
             >
-              Brochure
+              Marketing
             </li>
           </ul>
         </div>
@@ -51,12 +51,12 @@ function Work() {
         <div 
             className={ toggleState === 2 ? "active-content" : "content"}
            >
-                 Graphics Design
+                  Coming Soon
         </div>
         <div 
             className={ toggleState === 3 ? "active-content" : "content"}
            >
-                 Brochure
+                 Coming Soon
         </div>        
         </div>
       </main>
