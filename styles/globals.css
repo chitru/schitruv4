@@ -8,12 +8,24 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
 :root {
   --color-grey: #DFDFDF;
   --color-prime: #FF6161;
   --color-quote: #E2E2E2; 
   --color-ubuntu: #300A24;
   --color-bright: #FFF;
+  --color-dark: #000;
   --color-prime-dark: #FF2F52;
   --color-light-green: #DDF0D6;
   --color-blue: #2F9BFF;
@@ -144,6 +156,7 @@ header {
 .footer {
   background-color: var(--color-light-green);
   padding: 4rem 1rem 2rem;
+  position: relative;
 }
 
 .footer h3 {
@@ -187,7 +200,7 @@ header {
   display: inline-block;
   list-style-type: none;
   padding:0.2rem 0.5rem;
-  margin: 0.5rem;
+  margin: 0 2.5rem 1.8rem;
   cursor: pointer;
 }
 
@@ -198,7 +211,7 @@ header {
 }
 
 .tab-content {
-  background-color: rgb(197, 193, 193);
+  background-color: var(--color-grey);
   padding:1rem;
 }
 
@@ -208,24 +221,49 @@ header {
 
 /* Slider */
 .slider-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-item {
+  opacity: 0;
+  transition: opacity ease-in-out .5s;
+  grid-row-start: 1;
+  grid-column-start: 1;
   text-align: center;
 }
 
+.active {
+  opacity: 1;
+}
+
 .slider-item img {
-  display: block;
-  margin: 0 auto;
-  padding: 1rem;
-  width: 70%;
-  max-height: auto;
+  margin: 1rem 0;
+  width: 75%;
+  object-fit: contain;
+  box-shadow: 2px 0px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
 }
 
-
-
-a {
-  text-decoration: none;
-  color: black;
+.slider-arrow {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-* {
-  box-sizing: border-box;
+.next {
+  top: 50%;
+  right: 0;
+  position: fixed;
+  transform: translateX(-390%);
 }
+
+.prev {
+  top: 50%;
+  left: 0;
+  position: fixed;
+  transform: translateX(390%);
+}
+

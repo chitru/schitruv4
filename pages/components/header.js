@@ -29,7 +29,7 @@ function Header() {
                   {
                     NavItems.map((item, index) => {
                       return (
-                        <li key={index} className={item.cName}><Link href={item.url}><a target="_blank">{item.title}</a></Link></li>
+                        <li key={index} className={item.cName}><Link href={item.url}>{item.title}</Link></li>
                       )
                     })
                   }
