@@ -67,7 +67,7 @@ header {
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 4.5rem 2rem;
+  padding: 7rem 2rem;
   align-items: center;
   line-height: 3.7rem;
 }
@@ -115,7 +115,7 @@ header {
 
 /* Latest works */
 .latest-work {
-  padding: 7rem 1.5rem;
+  padding: 10rem 1.5rem 15rem;
 }
 
 .latest-work__images {
@@ -257,13 +257,13 @@ header {
   top: 50%;
   right: 0;
   position: fixed;
-  transform: translateX(-390%);
+  /* transform: translateX(-390%); */
 }
 
 .prev {
   top: 50%;
   left: 0;
   position: fixed;
-  transform: translateX(390%);
+  /* transform: translateX(390%); */
 }
 
