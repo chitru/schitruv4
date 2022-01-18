@@ -99,18 +99,6 @@ export default function Slider() {
             })}
             <div className="nextImg">
                 <SliderBtn moveSlide={nextSlide} direction={"next"}/>
-                {/* { sliderData.map((item, index) => {
-                    return(
-                        <div
-                            key={item.id}
-                        >
-                            <img
-                                src={item.img}
-                                width="100px"
-                            />
-                        </div>
-                    )
-                })} */}
             </div>
             <div className="prevImg">
                 <SliderBtn moveSlide={prevSlide} direction={"prev"}/>
