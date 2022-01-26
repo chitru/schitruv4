@@ -1,5 +1,5 @@
 import React,  {useEffect, useRef } from "react";
-import useWindowSize from "./useWindowSize";
+import useWindowSize from "../useWindowSize";
 
 const SmoothScroll = ({children}) => {
     const windowSize = useWindowSize();
