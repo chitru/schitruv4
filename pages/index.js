@@ -3,10 +3,68 @@ import Image from "next/image"
 import Footer from "./components/footer"
 import Header from "./components/header"
 import Skill from "./components/skill"
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import React, { useEffect } from "react"
+
+function FadeDiv({ children, ...props }) {
+  const fadingUp = {
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: 100 }
+  };
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if(inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div 
+      ref={ref}
+      animate={controls}
+      variants={fadingUp}
+      initial="hidden"
+    >{children}</motion.div>
+      )
+}
 
 export default function Home() {
+  const easing = [0.6, -0.05, 0.01, 0.99];
+  
+  const fadeInUp = {
+    initial: {
+          y: 50,
+    opacity: 0,
+  },
+  animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+          duration: 0.9,
+          ease: easing
+      }
+  }
+}
+
+const stagger = {
+  animate: {
+      transition: {
+          staggerChildren: 0.1
+      }
+  }
+}
+
+
   return (
-    <div>
+    <motion.div
+      exit={{opacity: 0}}
+      initial='initial'
+      animate='animate'
+    >
       <Head>
         <title>Chitru Shrestha</title>
         <meta name="description" content="Chitru Shrestha" />
@@ -14,20 +72,31 @@ export default function Home() {
       </Head>
       <Header/>
 
+      <FadeDiv>
       <section>
         <main className="main">
           <div className="hero">
-            <div className="hero__text">
+            <motion.div className="hero__text" initial={{ x:-60, opacity: 0 }}
+                animate={{ x: 0, opacity: 1}}
+                transition={{delay: .7}}
+                variant={stagger}>
               <h3>Lets scale, together</h3>
               <h1>TIMELESS DESIGNS</h1>
-            </div>
+            </motion.div>
             <div className="hero__img">
-              <Image src="/slide.png" width="500" height="400"/>
+              <motion.img 
+                initial={{ x:-60, opacity: 0 }}
+                animate={{ x: 0, opacity: 1}}
+                transition={{delay: .9}}
+                variant={stagger}
+              src="/slide.png" width="500" height="400"/>
             </div>
           </div>
         </main>
       </section>
+      </FadeDiv>
 
+      <FadeDiv>
       <section className="quote">
         <main className="main">
                 <div className="mark"><Image src="/quo.png" width="32" height="32"/></div>
@@ -37,25 +106,26 @@ export default function Home() {
                 </p>
         </main>
       </section>
-      
-      <section className="latest-work">
+      <section className="latest-work" variants={{stagger}}>
         <main className="main">
+                <FadeDiv>
                 <h2 className="headings">Latest Works</h2>
                 <div className="latest-work__images">
                   <div className="image-container">
-                    <Image src="/work1.png"  layout="responsive" width="275" height="352" />
-                    {/* <img src="/work1.png" alt="picture.tools"/> */}
+                    <img src="/work1.png" alt="picture.tools"/>
                   </div>
-                  <div>
-                    <Image src="/work2.png" layout="responsive" width="1250" height="800"/>
-                    {/* <img src="/work2.png" alt="Aporia - Helping Creator Economy"/> */}
+                  <div className="image-container">
+                    <img src="/work2.png" alt="Aporia - Helping Creator Economy"/>
                   </div>
                 </div>
+                </FadeDiv>
         </main>
       </section>
+      </FadeDiv>
 
       <section className="about">
         <main className="main">
+                <FadeDiv>
                 <h2 className="headings">I"m Full Stack Web Developer specialised in: </h2>
                 <div className="about__col">
                   <div>
@@ -69,9 +139,10 @@ export default function Home() {
                     <Skill skillTitle="SSG’s and others" skillDetails="Gatsby, SCSS, LESS, GIT, Heroku, cPanel "/>
                   </div>
                 </div>
+                </FadeDiv>
         </main>
       </section>
     <Footer/>
-    </div>
+    </motion.div>
   )
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Slider from "./components/slider/slider";
+import { motion } from "framer-motion";
 
 function Work() {
   const [toggleState, setToggleState] = useState(1);
@@ -11,7 +12,11 @@ function Work() {
   };
 
   return (
-    <div>
+    <motion.div 
+      exit={{opacity: 0}}
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+    >
       <Header />
       <main className="main work">
         <div className="tab-title">
@@ -55,8 +60,10 @@ function Work() {
         </div>
       </main>
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 
 export default Work;
+
+

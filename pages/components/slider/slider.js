@@ -1,7 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 import React, { useState } from "react";
-import Link from 'next/link'
-import SliderBtn from "./sliderBtn"
+import Link from "next/link";
+import SliderBtn from "./sliderBtn";
+
 
 const sliderData = [
     {
