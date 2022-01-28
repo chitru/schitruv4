@@ -27,8 +27,10 @@ a {
   --color-bright: #FFF;
   --color-dark: #000;
   --color-prime-dark: #FF2F52;
+  --color-prime-darkest: #e40023;
   --color-light-green: #DDF0D6;
   --color-blue: #2F9BFF;
+  --color-yellow: #e3b508;
 }
 
 header {
@@ -74,21 +76,22 @@ header {
 /* hero */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 10rem 2rem;
+  grid-template-columns: 2fr 1fr;
+  padding: 7rem 2rem;
+  padding-bottom: 0;
   align-items: center;
   line-height: 3.7rem;
 }
 
 .hero__text h3 {
-  font-size: 2.3rem;
-  font-weight: 500;
-  margin: 0;
+  font-size: 3rem;
+  font-weight: 600;
+  margin: .3rem 0;
   padding: 0 2rem;
 }
 
 .hero__text h1 {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   color: var(--color-prime);
   margin: 0;
   padding: .5rem 2rem;
@@ -96,7 +99,11 @@ header {
 
 .hero__img {
   display: grid;
-  justify-content: end;
+  justify-items: end;
+}
+.hero__img img {
+  width: 65%;
+  height: auto;
 }
 
 /* quote */
@@ -104,7 +111,7 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   background-color: var(--color-quote);
-  padding: 7rem 0;
+  padding: 9rem 0;
 }
 
 .quote p {

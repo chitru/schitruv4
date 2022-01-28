@@ -1,8 +1,7 @@
 import '../styles/globals.css'
-import SmoothScroll from "./components/smoothScroll"
 
 function MyApp({ Component, pageProps }) {
-  return     <SmoothScroll><Component {...pageProps} /></SmoothScroll>
+  return     <Component {...pageProps} />
 }
 
 export default MyApp

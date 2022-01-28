@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import {motion} from "framer-motion"
 
 const NavItems = [
     {
@@ -16,16 +17,41 @@ const NavItems = [
   ]
 
   
+  const menuVariant = {
+    initial: {
+      y: -100, 
+      opacity: 0 
+    },
+    animate: { 
+      y: 0, 
+      opacity: 1, 
+      transition: 
+        { 
+          delay: .7,
+          ease: [0.6, -0.05, 0.01, 0.95]
+        } 
+      },
+    exit: {
+      y: -100,
+      opacity: 0,
+    }
+  }
+
 function Header() {
     return(
-        <header>
+        <motion.header
+          variants={menuVariant}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
         <main className="main">
             <div className="header">
               <div className="header__logo">
-                <Link href="../"><Image src="/logo.png" width={120} height={70} alt="logo"/></Link>
+                <Link href="../"><Image src="/logo.png" width={75} height={70} alt="logo"/></Link>
               </div>
               <div>
-                <ul className="header__menu" >
+                <ul className="header__menu" variants={menuVariant}>
                   {
                     NavItems.map((item, index) => {
                       return (
@@ -37,7 +63,7 @@ function Header() {
               </div>
             </div>
         </main>
-        </header>
+        </motion.header>
     )
 }
 

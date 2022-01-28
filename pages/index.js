@@ -44,26 +44,41 @@ export default function Home() {
       y: 0,
       opacity: 1,
       transition: {
-          duration: 0.9,
+          duration: 0.5,
           ease: easing
       }
   }
 }
 
-const stagger = {
+const item = {
+  hidden: { 
+    y:200, 
+    opacity: 0 
+  },
   animate: {
-      transition: {
-          staggerChildren: 0.1
-      }
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+        ease: [.6, 0.1, -.05, 0.95],
+    }
+  },
+  exit: {
+    y: -200,
+    opacity: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeInOut"
+    }
   }
 }
 
 
   return (
     <motion.div
-      exit={{opacity: 0}}
-      initial='initial'
-      animate='animate'
+      // exit={{opacity: 0}}
+      // initial='initial'
+      // animate='animate'
     >
       <Head>
         <title>Chitru Shrestha</title>
@@ -76,20 +91,20 @@ const stagger = {
       <section>
         <main className="main">
           <div className="hero">
-            <motion.div className="hero__text" initial={{ x:-60, opacity: 0 }}
-                animate={{ x: 0, opacity: 1}}
-                transition={{delay: .7}}
-                variant={stagger}>
+            <motion.div className="hero__text" 
+                variant={item}
+                initial="hidden"
+                animate="animate"
+                >
               <h3>Lets scale, together</h3>
               <h1>TIMELESS DESIGNS</h1>
             </motion.div>
             <div className="hero__img">
               <motion.img 
-                initial={{ x:-60, opacity: 0 }}
-                animate={{ x: 0, opacity: 1}}
-                transition={{delay: .9}}
-                variant={stagger}
-              src="/slide.png" width="500" height="400"/>
+                variant={item}
+                initial="hidden"
+                animate="animate"
+              src="/slide.png"/>
             </div>
           </div>
         </main>
@@ -100,13 +115,11 @@ const stagger = {
       <section className="quote">
         <main className="main">
                 <div className="mark"><Image src="/quo.png" width="32" height="32"/></div>
-                <p>I create designs that will enchant your eyes,<br/>
-                  enhance your business with less effort possible. <br/><br/>
-                  I believe beauty is in simplicity.
+                <p>Idea is not to live forever <br/>but to create something that will.
                 </p>
         </main>
       </section>
-      <section className="latest-work" variants={{stagger}}>
+      <section className="latest-work" variants={{item}}>
         <main className="main">
                 <FadeDiv>
                 <h2 className="headings">Latest Works</h2>
