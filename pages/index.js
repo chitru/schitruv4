@@ -81,7 +81,7 @@ const item = {
       // animate='animate'
     >
       <Head>
-        <title>Chitru Shrestha</title>
+        <title>Homepage | Chitru Shrestha</title>
         <meta name="description" content="Chitru Shrestha" />
         <link rel="icon" href="/favicon.png" />
       </Head>

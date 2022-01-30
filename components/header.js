@@ -50,6 +50,7 @@ function Header() {
           animate="animate"
           exit="exit"
         >
+
         <main className="main">
             <div className="header">
               <div className="header__logo">
