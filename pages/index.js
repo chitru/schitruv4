@@ -1,8 +1,8 @@
 import Head from "next/head"
 import Image from "next/image"
-import Footer from "./components/footer"
-import Header from "./components/header"
-import Skill from "./components/skill"
+import Footer from "../components/footer"
+import Header from "../components/header"
+import Skill from "../components/skill"
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React, { useEffect } from "react"
@@ -115,7 +115,7 @@ const item = {
       <section className="quote">
         <main className="main">
                 <div className="mark"><Image src="/quo.png" width="32" height="32"/></div>
-                <p>Idea is not to live forever <br/>but to create something that will.
+                <p>We’re here to put a dent in the universe. <br/>Otherwise why else even be here? <br/> ~ Steve Jobs
                 </p>
         </main>
       </section>
@@ -139,7 +139,7 @@ const item = {
       <section className="about">
         <main className="main">
                 <FadeDiv>
-                <h2 className="headings">I"m Full Stack Web Developer specialised in: </h2>
+                <h2 className="headings">What I can use? </h2>
                 <div className="about__col">
                   <div>
                     <Skill skillTitle="Wireframing" skillDetails="Figma, Adobe XD, Sketch"/>
@@ -150,6 +150,7 @@ const item = {
                   <div>
                     <Skill skillTitle="Backend" skillDetails="Wordpress with WooCommerce"/>
                     <Skill skillTitle="SSG’s and others" skillDetails="Gatsby, SCSS, LESS, GIT, Heroku, cPanel "/>
+                    <Skill skillTitle="Next Upto" skillDetails="Unreal Engine, AWS and writing"/>
                   </div>
                 </div>
                 </FadeDiv>

@@ -1,8 +1,31 @@
 import React, { useState } from "react";
-import Footer from "./components/footer";
-import Header from "./components/header";
-import Slider from "./components/slider/slider";
+import Footer from "../components/footer";
+import Header from "../components/header";
+import Slider from "../components/slider/slider";
 import { motion } from "framer-motion";
+
+const item = {
+  hidden: { 
+    y:200, 
+    opacity: 0 
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.9,
+        ease: [.6, 0.1, -.05, 0.95],
+    }
+  },
+  exit: {
+    y: -200,
+    opacity: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeInOut"
+    }
+  }
+}
 
 function Work() {
   const [toggleState, setToggleState] = useState(1);
@@ -12,13 +35,14 @@ function Work() {
   };
 
   return (
-    <motion.div 
-      exit={{opacity: 0}}
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
-    >
+    <div>
       <Header />
-      <main className="main work">
+
+      <motion.main className="main work"
+      variants={item}
+      initial="hidden"
+      animate="animate"
+      >
         <div className="tab-title">
           <ul>
             <li
@@ -29,7 +53,7 @@ function Work() {
             >
               UI/UX Design
             </li>
-            {/* <li
+            <li
               className={toggleState === 2 ? "active-tab" : ""}
               onClick={() => {
                 handleClick(2);
@@ -37,7 +61,7 @@ function Work() {
             >
               Design
             </li>
-            <li
+            {/* <li
               className={toggleState === 3 ? "active-tab" : ""}
               onClick={() => {
                 handleClick(3);
@@ -58,9 +82,10 @@ function Work() {
             Coming Soon
           </div>
         </div>
-      </main>
+      </motion.main>
+      
       <Footer />
-    </motion.div>
+    </div>
   );
 }
 
