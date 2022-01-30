@@ -4,13 +4,18 @@ import Link from "next/link"
 import {motion} from "framer-motion"
 
 const NavItems = [
+  {
+    title: "Home",
+    url: "/",
+    cName: "nav-item"
+  },
     {
-      title: "work",
+      title: "Work",
       url: "/work",
       cName: "nav-item" 
     },
     {
-      title: "blog",
+      title: "Blog",
       url: "https://medium.com/@chitru-shrestha",
       cName: "nav-item"
     }
@@ -19,7 +24,7 @@ const NavItems = [
   
   const menuVariant = {
     initial: {
-      y: -100, 
+      y: -50, 
       opacity: 0 
     },
     animate: { 
@@ -51,7 +56,7 @@ function Header() {
                 <Link href="../"><Image src="/logo.png" width={75} height={70} alt="logo"/></Link>
               </div>
               <div>
-                <ul className="header__menu" variants={menuVariant}>
+                <ul className="header__menu">
                   {
                     NavItems.map((item, index) => {
                       return (

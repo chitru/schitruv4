@@ -18,7 +18,7 @@ function Footer() {
         <footer className="footer">
         <main className="main">
           <h3>{MISC.secret} <span>getting started</span></h3>
-          <p className="email-link">Hire me now: <Link href="mailto:schitru@gmail.com">schitru@gmail.com</Link></p>
+          <p className="email-link">Send me message: <Link href="mailto:schitru@gmail.com">schitru@gmail.com</Link></p>
           <div className="footer__social">
             <div><p>Always move forward.</p></div>
             <div><Social site="Github" siteURL="https://github.com/chitru"/> | <Social site="Twitter" siteURL="https://twitter.com/xtru1990" /></div>
