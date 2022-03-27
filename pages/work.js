@@ -1,30 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Slider from "../components/slider/slider";
-import { motion } from "framer-motion";
+import SliderDesign from "../components/slider/sliderDesign";
+import { useInView } from "react-intersection-observer";
+
+import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
+
+function FadeDiv({ children, ...props }) {
+  const fadingUp = {
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: 100 }
+  };
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if(inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div 
+      ref={ref}
+      animate={controls}
+      variants={fadingUp}
+      initial="hidden"
+    >{children}</motion.div>
+      )
+}
+
+
+const easing = [0.6, -0.05, 0.01, 0.99];
+
 const item = {
-  hidden: {
-    y: 200,
-    opacity: 0,
+  initial: {
+    y: 50,
+  opacity: 0,
   },
   animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.9,
-      ease: [0.6, 0.1, -0.05, 0.95],
-    },
-  },
-  exit: {
-    y: -200,
-    opacity: 0,
-    transition: {
-      duration: 0.7,
-      ease: "easeInOut",
-    },
-  },
+  y: 0,
+  opacity: 1,
+  transition: {
+      duration: 0.5,
+      ease: easing
+  }
+}
 };
 
 function Work() {
@@ -41,7 +65,7 @@ function Work() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header />
-
+      <FadeDiv>
       <motion.main
         className="main work"
         variants={item}
@@ -78,17 +102,17 @@ function Work() {
         </div>
         <div className="tab-content">
           <div className={toggleState === 1 ? "active-content" : "content"}>
-            <Slider />
+          <Slider />
           </div>
           <div className={toggleState === 2 ? "active-content" : "content"}>
-            Coming Soon
+          <SliderDesign/>
           </div>
           <div className={toggleState === 3 ? "active-content" : "content"}>
             Coming Soon
           </div>
         </div>
       </motion.main>
-
+      </FadeDiv>
       <Footer />
     </div>
   );

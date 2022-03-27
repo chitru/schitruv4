@@ -59,6 +59,15 @@ const sliderData = [
         img: "/slide/7.png",
         siteLink: "#"
     },
+    {
+        id: uuidv4(),
+        title: "Brochure Design",
+        subTitle: "Design",
+        nextSlide: "a",
+        prevSlide: "b",
+        img: "/slide/8.png",
+        siteLink: "#"
+    },
 ]
 
 export default function Slider() {
