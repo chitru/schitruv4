@@ -1,4 +1,4 @@
 ## Portfolio schitru version 4
 
-Portfolio: [Link](https://schitru.com/)
+Portfolio Link: [Link](https://schitru.com/)
 
